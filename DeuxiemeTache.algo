@@ -1,16 +1,18 @@
 ALGORITHM DeuxiemeTache
 VAR
-    arr : ARRAY_OF INTEGER[]:={2,3,1,6,4,5};
-    cle,j: INTEGER;
+    arr : ARRAY_OF INTEGER[]:=[2,3,1,6,4,5];
+    min,j: INTEGER;
 BEGIN
     
     FOR i FROM 1 TO arr.length-1 STEP 1  DO
-        cle:=arr[i]
+        min :=arr[i]
         j:=i-1
-        WHILE (j>=0 AND arr[j]>cle) DO
-            arr[j+1]:=arr[j]
-            j:=j-1
+        WHILE (j>=0 AND arr[j]> min ) DO
+            arr[j+1] := arr[j] ;
+            j:=j-1 ;
         END_WHILE
-        arr[j+1]:=cle
+
+        arr[j] := min ;
+        
     END_FOR
 END

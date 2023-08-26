@@ -5,6 +5,7 @@ BEGIN
     ps := v1[0]*v2[0]+v1[1]*v2[1];
     RETURN ps ;
 END
+
 PROCEDURE Orthogonalite(v1 : ARRAY_OF INTEGER[2], v2 : ARRAY_OF INTEGER[2])
 VAR
     etat_vecteurs:CHAR:="Non orthogonaux";
@@ -12,13 +13,14 @@ BEGIN
    IF (dot_product(v1,v2) = 0) THEN
     etat_vecteurs="Orthogonaux";
    END_IF
-   Write("le vecteur u de cordonnées("+ v1[0]","v1[1]+") le vecteur v de cordonnées("+ v2[0]","v2[1]" sont "+etat_vecteurs) ;
+   Write("le vecteur u de cordonnées("+ v1[0]+" , "+v1[1]+" ) le vecteur v de cordonnées("+ v2[0]+" , "+v2[1]" ) sont "+etat_vecteurs) ;
 END
+
 ALGORITHM Produit_Dot
 VAR
-    v1 : ARRAY_OF INTEGER[2] :={1,2};
-    v2 : ARRAY_OF INTEGER[2] :={0,2};
-    v3 : ARRAY_OF INTEGER[2] :={1,0};
+    v1 : ARRAY_OF INTEGER[2] :=[1,2];
+    v2 : ARRAY_OF INTEGER[2] :=[0,2];
+    v3 : ARRAY_OF INTEGER[2] :=[1,0];
 BEGIN
     Orthogonalite(v1,v2);
     Orthogonalite(v1,v3);
